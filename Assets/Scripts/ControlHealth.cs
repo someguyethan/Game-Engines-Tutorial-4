@@ -27,12 +27,4 @@ public class ControlHealth : MonoBehaviour
             #endregion
         }
     }
-
-    private void Update()
-    {
-        if (PersistantManager.Instance.Value == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
 }
