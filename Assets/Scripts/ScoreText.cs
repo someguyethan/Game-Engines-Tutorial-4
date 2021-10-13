@@ -10,10 +10,12 @@ public class ScoreText : MonoBehaviour
     public static ScoreText Instance { get; private set; }
     private void Awake()
     { 
-        _text = GetComponent<Text>(); Instance = this; 
+        _text = GetComponent<Text>(); 
+        Instance = this; 
     }
     public void AddScore(int value)
     { 
-        _score += value; _text.text = _score.ToString(); 
+        _score += value; 
+        _text.text = _score.ToString(); 
     }
 }

@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ControlHealth : MonoBehaviour
 {
     public Text health;
+    public static event Action col;
 
     private void Start()
     {
@@ -19,6 +21,10 @@ public class ControlHealth : MonoBehaviour
             Destroy(collision.gameObject);
             PersistantManager.Instance.Value--;
             health.text = "Health " + PersistantManager.Instance.Value.ToString();
+
+            #region observer        
+            col?.Invoke();
+            #endregion
         }
     }
 

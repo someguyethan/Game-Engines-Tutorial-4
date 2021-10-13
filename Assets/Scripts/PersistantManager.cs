@@ -7,6 +7,7 @@ public class PersistantManager : MonoBehaviour
     public static PersistantManager Instance { get; private set; }
 
     public int Value;
+    public AudioSource clip;
 
     private void Awake()
     {
@@ -19,5 +20,10 @@ public class PersistantManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    public void PlaySound()
+    {
+        clip.Play();
     }
 }
